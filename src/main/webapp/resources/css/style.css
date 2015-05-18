@@ -1,0 +1,291 @@
+* {
+margin: 0px;
+padding: 0px;
+}
+
+p {
+margin-bottom: 10px;
+}
+
+body {
+background: #fff;
+}
+
+#container {
+max-width: 1080px;
+margin: 0 auto;
+font-family: Verdana, Geneva, sans-serif;
+font-size: 14px;
+color: #717171;
+position: relative;
+}
+
+@font-face {
+font-family: YanoneKaffeesatz-Regular;
+src: url(YanoneKaffeesatz-Regular.ttf);
+}
+
+h1, h2, h3, h4, h5, h6, {
+color: #535353;
+font-family: YanoneKaffeesatz-Regular, Verdana, Geneva, sans-serif;
+margin-bottom: 10px;
+}
+
+a {
+font-family: Verdana, Geneva, sans-serif;
+text-decoration: none;
+color: #717171;
+font-size: 14px;
+}
+
+#header {
+height: 20px;
+}
+
+#top_nav {
+height: 25px;
+background: #fff;
+border-bottom: solid 1px #d9d9d9;
+border-right: solid 1px #d9d9d9;
+margin-bottom: 15px;
+padding-top: 5px;
+}
+
+#top_nav ul {
+list-style-type: none;
+}
+
+#top_nav li {
+display: inline;
+margin-left: 15px;
+margin-right: 15px;
+font-family: "Times New Roman", Times, serif;
+font-size: 14px;
+}
+
+#top_nav a {
+color: #5c5c5c;
+font-family: "Times New Roman", Times, serif;
+}
+
+#top_nav a:hover {
+text-decoration: underline;
+}
+
+.my-content {
+    /*margin-top: 2%;*/
+    width: 90%;
+    height: auto;
+    font-size: small;
+}
+.content {
+background: #fff;
+margin: 0px auto 10px 0px;
+
+}
+
+.content img {
+max-width: 100%;
+margin: 0px auto 10px auto;
+display: block;
+max-height: 100%;
+}
+
+.info {
+margin-bottom: 5px;
+border-bottom: dashed 1px #c2c2c2;
+padding-bottom: 5px;
+}
+
+.date {
+background: url(../images/date.png) no-repeat 0px -2px;
+padding-left: 25px
+}
+
+#bars {
+position: absolute;
+background: none;
+top: 125px;
+lef: 0px;
+width: 100%
+}
+
+#left_side_bar {
+float: left;
+width: 22%;
+}
+
+#right_side_bar {
+float: right;
+width: 22%;
+}
+
+.block {
+background: #fff;
+padding: 15px;
+/*margin-bottom: 15px;*/
+/*border-bottom: solid 1px #d9d9d9;*/
+/*border-right: solid 1px #d9d9d9;*/
+
+}
+
+.block h2 {
+font-size: 24px;
+font-weight: normal;
+border-bottom: dashed 1px #c2c2c2;
+padding-bottom: 8px;
+padding-right: 15px;
+text-transform: uppercase;
+}
+
+.block h3 {
+font-size: 18px;
+font-weight: normal;
+border-bottom: dashed 1px #c2c2c2;
+padding-bottom: 8px;
+text-transform: uppercase;
+}
+
+.block ul {
+list-style-type: none;
+}
+
+.block a {
+font-size: 12px;
+}
+
+.block a:hover {
+text-decoration: underline;
+}
+
+.tags {
+overflow: hidden;
+}
+
+.tags a {
+float: left;
+background: #e8e8e8;
+margin: 2px;
+padding: 5px;
+}
+
+.archive a {
+line-height: 20px;
+}
+
+.small_post {
+overflow: hidden;
+margin-bottom: 10px;
+}
+
+.small_post img {
+float: left;
+}
+
+.small_post h5 {
+margin-left: 70px;
+}
+
+.small_post a {
+font-family: YanoneKaffeesatz-Regular, Verdana, Geneva, sans-serif;
+font-size: 16px;
+display: block;
+font-weight: normal;
+}
+
+#footer {
+margin-top: 5px;
+height: 15px;
+background: #fff;
+border-top: solid 1px #d9d9d9;
+border-right: solid 1px #d9d9d9;
+font-size: 9pt;
+clear: both;
+padding: 5px;
+}
+
+@media screen and (max-width: 800px) {
+.content {
+width: 96%;
+float: none;
+}
+
+#left_side_bar {
+float: left;
+width: 48%;
+}
+
+#right_side_bar {
+float: right;
+width: 48%;
+}
+
+#bars {
+position: static;
+background: none;
+width: 100%
+}
+
+}
+
+@media screen and (max-width: 400px) {
+.content {
+width: 96%;
+float: none;
+}
+
+#left_side_bar {
+float: none;
+width: 96%;
+margin: auto;
+}
+
+#right_side_bar {
+float: none;
+width: 96%;
+margin: auto;
+}
+
+#bars {
+position: static;
+background: none;
+width: 100%
+}
+}
+
+.noBorder tr,
+.noBorder td {
+height: 3em;
+border: 0 !important;
+margin: 0 !important;
+padding: 0 5px !important;
+
+background-color: transparent;
+}
+
+.noBorderSimple tr,
+.noBorderSimple td {
+border: 0 !important;
+margin: 0 !important;
+padding: 0 !important;
+background-color: transparent;
+}
+
+.jumbotron {
+    background-color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        padding: 48px 0;
+    }
+    .container .jumbotron,
+    .container-fluid .jumbotron {
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+    .jumbotron h1,
+    .jumbotron .h1 {
+        font-size: 63px;
+    }
+}

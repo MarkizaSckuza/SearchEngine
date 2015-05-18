@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Search Engine</title>
+</h:head>
+<h:body>
+    <div style="width: 100%;">
+        <ui:composition template="templates/mainLayout.xhtml">
+            <ui:define name="content">
+                <h:form id="form">
+                    <p:panelGrid style="width: 100%;table-layout:fixed;" styleClass="noBorder" layout="tabular">
+                        <p:row>
+                            <p:column style="width: 35%">
+                                <p:inputText value="#{searchBean.query}"
+                                             style="width: 300px"/>
+                            </p:column>
+                            <p:column style="width: 65%">
+                                <p:commandButton id="search"
+                                                 style="margin-left: 10px"
+                                                 value="Search"
+                                                 actionListener="#{searchBean.search}"
+                                                 update="form"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+
+                    <div style="float: left; width: 35%;">
+                        <p:tree rendered="#{searchBean.treeVisible}"
+                                value="#{searchBean.root}"
+                                var="node"
+                                dynamic="true"
+                                selectionMode="multiple"
+                                highlight="true"
+                                expanded="true">
+                            <p:treeNode>
+                                <p:commandLink value="#{node}"
+                                               action="#{searchBean.currentData}"
+                                               update=":form">
+                                </p:commandLink>
+                            </p:treeNode>
+                        </p:tree>
+                    </div>
+
+                    <div style="float: right; width: 65%;">
+                        <p:panelGrid styleClass="noBorder" layout="tabular">
+                            <p:column>
+                                <c:forEach var="snippet" items="#{searchBean.currentSnippets}">
+
+                                        <p:outputPanel styleClass="block">
+                                            <p:link value="#{snippet.url}"
+                                                    href="#{snippet.url}">
+                                            </p:link>
+                                            <br/>
+                                            <h:outputText value="#{snippet.description}"></h:outputText>
+                                        </p:outputPanel>
+                                </c:forEach>
+                            </p:column>
+                        </p:panelGrid>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </div>
+</h:body>
+</html>

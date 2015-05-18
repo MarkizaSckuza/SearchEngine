@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+    <ui:composition template="templates/mainLayout.xhtml">
+        <ui:define name="content">
+
+            <!--<div class="block">-->
+            <!--<p:panelGrid style="width: 100%;table-layout:fixed;" layout="tabular" styleClass="noBorderSimple">-->
+                <!--<p:row>-->
+                    <!--<p:column style="width:5%;"/>-->
+                    <!--<p:column style="width:90%"/>-->
+                    <!--<p:column style="width:5%"/>-->
+                <!--</p:row>-->
+                <!--<ui:repeat value="#{mainBean.articleList}" var="article">-->
+                    <!--<p:row>-->
+                        <!--<p:column styleClass="block"></p:column>-->
+                        <!--<p:column styleClass="block">-->
+                            <!--<div class="info">-->
+                                <!--<span class="date">#{article.lastUpdatedDate}</span>-->
+                            <!--</div>-->
+                            <!--<h3><p:commandLink value="#{article.title}"/></h3>-->
+                            <!--<h:outputText escape="false"-->
+                                          <!--value="#{article.content}"/>-->
+                        <!--</p:column>-->
+                        <!--<p:column></p:column>-->
+                    <!--</p:row>-->
+                <!--</ui:repeat>-->
+            <!--</p:panelGrid>-->
+
+            <!--<div class="block">-->
+                <ui:repeat value="#{mainBean.articleList}" var="article">
+                    <p:outputPanel deferred="true" deferredMode="visible" styleClass="block">
+                        <div class="info">
+                            <span class="date">#{article.lastUpdatedDate}</span>
+                        </div>
+                        <h3><p:commandLink value="#{article.title}"/></h3>
+                        <h:outputText escape="false"
+                                      value="#{article.content}"/>
+                    </p:outputPanel>
+                </ui:repeat>
+            <!--</div>-->
+
+
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>
